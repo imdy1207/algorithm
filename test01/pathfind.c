@@ -49,9 +49,11 @@ void bfs(position p) {
         position next_p = dequeue();
         printf("[%d, %d]\n", next_p.x, next_p.y);
 
-        for (size_t i = 0; i < count; i++)
+        for (int i = 0; i < 4; i++) // move
         {
-            /* code */
+            position neighbor;
+            neighbor.x = next_p.x + movable[i][0];
+            neighbor.y = next_p.y +
         }
         
     }
