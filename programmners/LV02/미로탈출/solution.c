@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 
-#define MAX_X_POSITION 7
-#define MAX_Y_POSITION 7
 #define MAX_QUEUE_SIZE 100
 
 typedef struct
@@ -11,18 +10,6 @@ typedef struct
     int y;
 } position;
 
-int map[MAX_X_POSITION][MAX_Y_POSITION] = {
-        {0, 0, 0, 0, 0, 0, 0},
-        {0, 1, 1, 1, 1, 1, 0},
-        {0, 0, 0, 1, 0, 0, 0},
-        {1, 1, 0, 1, 0, 1, 1},
-        {1, 1, 0, 1, 0, 0, 0},
-        {1, 0, 0, 0, 1, 0, 0},
-        {1, 0, 1, 0, 0, 0, 0}
-    };
-
-bool visited[MAX_X_POSITION][MAX_Y_POSITION] = { false, };
-int distance[MAX_X_POSITION][MAX_Y_POSITION] = { 0, };
                 // Move      Up     Right   Down    Left
 position movable[4][2] = {{-1, 0}, {0, 1}, {1, 0}, {0, -1}};
 
@@ -107,15 +94,25 @@ void printMap(int map[MAX_X_POSITION][MAX_Y_POSITION]){
     
 }
 
-int main(int args, char* argv[]) {
-    position start = {0, 0};
-    position destination = {MAX_X_POSITION-1, MAX_Y_POSITION-1};
+// int main(int args, char* argv[]) {
+//     position start = {0, 0};
+//     position destination = {MAX_X_POSITION-1, MAX_Y_POSITION-1};
 
-    bfs(start, destination);
+//     bfs(start, destination);
 
-    printMap(distance);
+//     printMap(distance);
 
-    printf("%d", distance[destination.x][destination.y]);
+//     printf("%d", distance[destination.x][destination.y]);
 
-    return 0;
+//     return 0;
+// }
+
+int solution(const char* maps[], size_t maps_len) {
+    int map[maps_len][maps_len];
+
+    bool visited[maps_len][maps_len] = { false, };
+    int distance[maps_len][maps_len] = { 0, };
+
+    int answer = 0;
+    return answer;
 }
